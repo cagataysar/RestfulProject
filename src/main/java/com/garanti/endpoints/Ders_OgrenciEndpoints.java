@@ -35,7 +35,7 @@ public class Ders_OgrenciEndpoints {
         return repo.getById(id);
     }
 
-    @GET
+    @DELETE
     @Path(value = "deleteById/{id}")
     @Produces(value = MediaType.APPLICATION_JSON)
     public String deleteById(@PathParam(value = "id") Integer id) {
