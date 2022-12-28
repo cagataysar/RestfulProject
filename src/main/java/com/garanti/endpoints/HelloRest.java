@@ -9,7 +9,7 @@ public class HelloRest
 {
     @GET
     @Path(value = "hello")
-    public String abuziddin()
+    public String helloRest()
     {
         // localhost:9090/FirstRestfulService/rest/hello
         return "hello jakarta rest";
