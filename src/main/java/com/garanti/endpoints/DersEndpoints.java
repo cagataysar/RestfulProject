@@ -35,13 +35,17 @@ public class DersEndpoints {
         return repo.getById(id);
     }
 
-    @GET
+    @DELETE
     @Path(value = "deleteById/{id}")
-    @Produces(value = MediaType.APPLICATION_JSON)
-    public String deleteById(@PathParam(value = "id") Integer id) {
+    public String deleteById(@PathParam(value = "id")Integer id)
+    {
         // localhost:9090/FirstRestfulService/ders/deleteById
-        repo.deleteById(id);
-        return "Başarı ile silindi";
+        if (repo.deleteById(id)){
+            return "Başarı ile silindi.";
+        }
+        else {
+            return "Başarı ile silinemedi.";
+        }
     }
 
     @POST

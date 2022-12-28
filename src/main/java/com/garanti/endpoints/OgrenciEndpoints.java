@@ -13,6 +13,8 @@ public class OgrenciEndpoints {
 
     private OgrenciRepo repo;
 
+    Ogrenci ogrenci = new Ogrenci();
+
     public OgrenciEndpoints() {
         this.repo = new OgrenciRepo();
     }
@@ -35,13 +37,18 @@ public class OgrenciEndpoints {
         return repo.getById(id);
     }
 
-    @GET
+    @DELETE
     @Path(value = "deleteById/{id}")
-    @Produces(value = MediaType.APPLICATION_JSON)
-    public String deleteById(@PathParam(value = "id") Integer id) {
+    public String deleteById(@PathParam(value = "id") Integer id ) {
         // localhost:9090/FirstRestfulService/ogrenci/deleteById
-        repo.deleteById(id);
-        return "Başarı ile silindi";
+        if (repo.deleteById(id)){
+//            String sonuc = "--> " + ogrenci.getClass().getName()+ " isimli öğrenci silindi";
+//            return sonuc;
+            return "Başarı ile silindi.";
+        }
+        else {
+            return "Başarı ile silinemedi.";
+        }
     }
 
     @POST

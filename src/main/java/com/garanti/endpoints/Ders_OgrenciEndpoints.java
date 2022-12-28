@@ -37,20 +37,24 @@ public class Ders_OgrenciEndpoints {
 
     @DELETE
     @Path(value = "deleteById/{id}")
-    @Produces(value = MediaType.APPLICATION_JSON)
-    public String deleteById(@PathParam(value = "id") Integer id) {
+    public String deleteById(@PathParam(value = "id")Integer id)
+    {
         // localhost:9090/FirstRestfulService/dersogrenci/deleteById
-        repo.deleteById(id);
-        return "Başarı ile silindi";
+        if (repo.deleteById(id)){
+            return "Başarı ile silindi.";
+        }
+        else {
+            return "Başarı ile silinemedi.";
+        }
     }
 
     @POST
     @Path(value = "save")
     @Consumes(value = MediaType.APPLICATION_JSON)
-    public String save(Ders_Ogrenci ders)
+    public String save(Ders_Ogrenci ders_ogrenci)
     {
         // localhost:9090/FirstRestfulService/dersogrenci/save
-        repo.save(ders);
+        repo.save(ders_ogrenci);
         return "Başarı ile kaydedildi";
     }
 }

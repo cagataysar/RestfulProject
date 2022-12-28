@@ -42,7 +42,6 @@ public class KonuEndpoints {
         // localhost:9090/FirstRestfulService/konu/deleteById
         if (repo.deleteById(id)){
             return "Başarı ile silindi.";
-
         }
         else {
             return "Başarı ile silinemedi.";
