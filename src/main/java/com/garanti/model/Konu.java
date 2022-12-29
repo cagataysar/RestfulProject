@@ -1,37 +1,20 @@
 package com.garanti.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Konu
 {
     private Integer ID;
 
     // aman dikkat repoda boş gelmesin
     private String NAME;
-
-    public Integer getID() {
-        return ID;
-    }
-
-    public String getNAME() {
-        return NAME;
-    }
-
-    public void setNAME (String NAME) {
-        this.NAME = NAME;
-    }
-
-    public Konu(Integer ID, String NAME)
-    {
-        this.ID = ID;
-        this.NAME = NAME;
-    }
-
-    public Konu(String NAME)
-    {
-        this.NAME = NAME;
-    }
-
-    public Konu () {
-    }
 
     @Override
     public String toString() {

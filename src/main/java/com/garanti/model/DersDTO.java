@@ -1,5 +1,14 @@
 package com.garanti.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class DersDTO
 {
     private Integer ID;
@@ -7,23 +16,4 @@ public class DersDTO
     private String OGRETMEN;
 
     private String KONU;
-
-    public Integer getID() {
-        return ID;
-    }
-
-    public String getOGRETMEN() {
-        return OGRETMEN;
-    }
-
-    public String getKONU() {
-        return KONU;
-    }
-
-    public DersDTO(Integer ID, String OGRETMEN, String KONU)
-    {
-        this.ID = ID;
-        this.OGRETMEN = OGRETMEN;
-        this.KONU = KONU;
-    }
 }
